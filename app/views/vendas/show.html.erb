@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo venda:</strong>
+  <%= @venda.tipo_venda.tipo %>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @venda.cliente.nome %>
+</p>
+
+<p>
+  <strong>Animal:</strong>
+  <%= @venda.animal.nome %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @venda.valor %>
+</p>
+
+<p>
+  <strong>N parcelas:</strong>
+  <%= @venda.n_parcelas %>
+</p>
+
+<p>
+  <strong>Dia Vencimento:</strong>
+  <%= @venda.dia_vencimento %>
+</p>
+
+
+<%= link_to 'Edit', edit_venda_path(@venda) %> |
+<%= link_to 'Back', vendas_path %>

@@ -1,0 +1,50 @@
+<%= form_for(venda) do |f| %>
+  <% if venda.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(venda.errors.count, "error") %> prohibited this venda from being saved:</h2>
+
+      <ul>
+      <% venda.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tipo_venda_id %>
+    <%= f.select :tipo_venda_id, @tipos.collect {|t| [t.tipo, t.id]} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cliente_id %>
+    <%= f.select :cliente_id, @clientes.collect {|t| [t.nome, t.id]}, :include_blank => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :animal_id %>
+    <%= f.select :animal_id, @animais.collect {|t| [t.nome, t.id]}, :include_blank => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :valor %>
+    <%= f.text_field :valor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :n_parcelas %>
+    <%= f.number_field :n_parcelas %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :dia_vencimento %>
+    <%= f.number_field :dia_vencimento %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

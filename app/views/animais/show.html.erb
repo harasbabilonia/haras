@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @animal.nome %>
+</p>
+
+<p>
+  <strong>Sexo:</strong>
+  <%= @animal.sexo %>
+</p>
+
+<p>
+  <strong>Pelagem:</strong>
+  <%= @animal.pelagem %>
+</p>
+
+<p>
+  <strong>Data nascimento:</strong>
+  <%= @animal.data_nascimento %>
+</p>
+
+<p>
+  <strong>Pedigree:</strong>
+  <%= link_to 'Visualizar Pedigree', @animal.pedigree, :target => "_blank" %>
+</p>
+
+<%= link_to 'Edit', edit_animal_path(@animal) %> |
+<%= link_to 'Back', animais_path %>

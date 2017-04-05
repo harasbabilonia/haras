@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo_venda: one
+  cliente: one
+  animal: one
+  valor: 1.5
+  n_parcelas: 1
+
+two:
+  tipo_venda: two
+  cliente: two
+  animal: two
+  valor: 1.5
+  n_parcelas: 1

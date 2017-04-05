@@ -1,0 +1,5 @@
+class AddDiaVencimentoToVenda < ActiveRecord::Migration[5.0]
+  def change
+    add_column :vendas, :dia_vencimento, :integer
+  end
+end
