@@ -39,6 +39,7 @@
     <th>Numero</th>
     <th>Data vencimento</th>
     <th>Valor</th>
+    <th>Data Pagamento</th>
     <th></th>
   </tr>
 </thead>
@@ -48,7 +49,8 @@
       <td><%= parcela.numero %></td>
       <td><%= parcela.data_vencimento %></td>
       <td><%= parcela.valor %></td>
-      <td><b>Informar Pagamento</td>
+      <td><%= parcela.data_pagamento ? parcela.data_pagamento : 'Em aberto' %>
+      <td><%= link_to('Informar Pagamento', edit_parcela_path(parcela)) if parcela.data_pagamento.nil? %></td>
     </tr>
   <% end %>
 </tbody>

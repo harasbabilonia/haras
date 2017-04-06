@@ -8,6 +8,7 @@ class Venda < ApplicationRecord
 
     def gerar_parcelas
       valor_parcela = self.valor / self.n_parcelas
+      valor_parcela = valor_parcela.round(2)
       vencimento = self.data_primeiro_vencimento
       for i in 1..self.n_parcelas do
         p = Parcela.new

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405233251) do
+ActiveRecord::Schema.define(version: 20170406003102) do
 
   create_table "animais", force: :cascade do |t|
     t.string   "nome"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20170405233251) do
     t.float    "valor"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.float    "valor_pago"
+    t.integer  "status"
     t.index ["venda_id"], name: "index_parcelas_on_venda_id"
   end
 

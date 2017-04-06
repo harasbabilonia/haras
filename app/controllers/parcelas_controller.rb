@@ -4,7 +4,9 @@ class ParcelasController < ApplicationController
   # GET /parcelas
   # GET /parcelas.json
   def index
-    @parcelas = Parcela.all
+    @parcelas_em_atraso = Parcela.where("data_pagamento is null and data_vencimento < ?", Date.today)
+    @parcelas_a_vencer = Parcela.where("data_pagamento is null and data_vencimento < ?", Date.today.at_end_of_month)
+    @parcelas_pagas = Parcela.where("data_pagamento  >= ? ", Date.today.at_beginning_of_month)
   end
 
   # GET /parcelas/1
@@ -42,7 +44,7 @@ class ParcelasController < ApplicationController
   def update
     respond_to do |format|
       if @parcela.update(parcela_params)
-        format.html { redirect_to @parcela, notice: 'Parcela was successfully updated.' }
+        format.html { redirect_to @parcela.venda, notice: 'Parcela was successfully updated.' }
         format.json { render :show, status: :ok, location: @parcela }
       else
         format.html { render :edit }

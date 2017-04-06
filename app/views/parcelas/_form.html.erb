@@ -13,18 +13,25 @@
 
   <div class="field">
     <%= f.label :venda_id %>
-    <%= f.text_field :venda_id %>
+    <%= @parcela.venda.animal.nome %>
   </div>
 
   <div class="field">
     <%= f.label :numero %>
-    <%= f.number_field :numero %>
+    <%= @parcela.numero %>
   </div>
 
   <div class="field">
     <%= f.label :data_vencimento %>
-    <%= f.date_select :data_vencimento %>
+    <%= @parcela.data_vencimento %>
   </div>
+
+
+  <div class="field">
+    <%= f.label :valor %>
+    <%= @parcela.valor %>
+  </div>
+
 
   <div class="field">
     <%= f.label :data_pagamento %>
@@ -32,9 +39,11 @@
   </div>
 
   <div class="field">
-    <%= f.label :valor %>
-    <%= f.text_field :valor %>
+    <%= f.label :valor_pago %>
+    <%= f.text_field :valor_pago %>
   </div>
+
+
 
   <div class="actions">
     <%= f.submit %>

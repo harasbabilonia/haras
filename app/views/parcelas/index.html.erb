@@ -1,6 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Parcelas</h1>
+<h1>Resumo do Mês Atual</h1>
+<hr/>
+
+<h2>Parcelas em Atraso</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Venda</th>
+      <th>Numero</th>
+      <th>Data vencimento</th>
+      <th>Valor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parcelas_em_atraso.each do |parcela| %>
+      <tr class="parcela_em_atraso">
+        <td><%= parcela.venda.animal.nome %></td>
+        <td><%= parcela.numero %></td>
+        <td><%= parcela.data_vencimento %></td>
+        <td><%= parcela.valor %></td>
+        <td><%= link_to('Informar Pagamento', edit_parcela_path(parcela))  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+<h2>Parcelas A vencer dentro do mês</h2>
 
 <table>
   <thead>
@@ -8,28 +39,52 @@
       <th>Venda</th>
       <th>Numero</th>
       <th>Data vencimento</th>
-      <th>Data pagamento</th>
       <th>Valor</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @parcelas.each do |parcela| %>
+    <% @parcelas_a_vencer.each do |parcela| %>
       <tr>
-        <td><%= parcela.venda %></td>
+        <td><%= parcela.venda.animal.nome %></td>
         <td><%= parcela.numero %></td>
         <td><%= parcela.data_vencimento %></td>
-        <td><%= parcela.data_pagamento %></td>
         <td><%= parcela.valor %></td>
-        <td><%= link_to 'Show', parcela %></td>
-        <td><%= link_to 'Edit', edit_parcela_path(parcela) %></td>
-        <td><%= link_to 'Destroy', parcela, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to('Informar Pagamento', edit_parcela_path(parcela))  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<h2>Parcelas pagas desde o início do mês</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Venda</th>
+      <th>Numero</th>
+      <th>Data vencimento</th>
+      <th>Valor</th>
+      <th>Data pagamento</th>
+      <th>Valor Pago</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parcelas_pagas.each do |parcela| %>
+      <tr>
+        <td><%= parcela.venda.animal.nome %></td>
+        <td><%= parcela.numero %></td>
+        <td><%= parcela.data_vencimento %></td>
+        <td><%= parcela.valor %></td>
+        <td><%= parcela.data_pagamento %></td>
+        <td><%= parcela.valor_pago %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Parcela', new_parcela_path %>
