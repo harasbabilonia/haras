@@ -27,8 +27,32 @@
 
 <p>
   <strong>Dia Vencimento:</strong>
-  <%= @venda.dia_vencimento %>
+  <%= @venda.data_primeiro_vencimento %>
 </p>
+
+
+
+<h3>Parcelas</h3>
+<table>
+<thead>
+  <tr>
+    <th>Numero</th>
+    <th>Data vencimento</th>
+    <th>Valor</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <% for parcela in @venda.parcelas do %>
+    <tr>
+      <td><%= parcela.numero %></td>
+      <td><%= parcela.data_vencimento %></td>
+      <td><%= parcela.valor %></td>
+      <td><b>Informar Pagamento</td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
 
 
 <%= link_to 'Edit', edit_venda_path(@venda) %> |

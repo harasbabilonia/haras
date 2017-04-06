@@ -55,9 +55,9 @@ ActiveRecord::Schema.define(version: 20170405233251) do
     t.integer  "animal_id"
     t.float    "valor"
     t.integer  "n_parcelas"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.integer  "dia_vencimento"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.date     "data_primeiro_vencimento"
     t.index ["animal_id"], name: "index_vendas_on_animal_id"
     t.index ["cliente_id"], name: "index_vendas_on_cliente_id"
     t.index ["tipo_venda_id"], name: "index_vendas_on_tipo_venda_id"
