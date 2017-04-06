@@ -2,7 +2,7 @@ class Venda < ApplicationRecord
     belongs_to :tipo_venda
     belongs_to :cliente
     belongs_to :animal
-    has_many :parcelas
+    has_many :parcelas, :dependent => :restrict_with_error
 
     before_create :gerar_parcelas
 

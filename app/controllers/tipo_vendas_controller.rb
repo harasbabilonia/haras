@@ -54,10 +54,17 @@ class TipoVendasController < ApplicationController
   # DELETE /tipo_vendas/1
   # DELETE /tipo_vendas/1.json
   def destroy
-    @tipo_venda.destroy
-    respond_to do |format|
-      format.html { redirect_to tipo_vendas_url, notice: 'Tipo venda was successfully destroyed.' }
-      format.json { head :no_content }
+    if @tipo_venda.destroy
+        respond_to do |format|
+          format.html { redirect_to tipo_vendas_url, notice: 'Tipo venda excluído.' }
+          format.json { head :no_content }
+        end
+    else
+        respond_to do |format|
+          format.html { redirect_to tipo_vendas_url, notice: 'Erro ao excluir tipo de venda.' }
+          format.json { head :no_content }
+        end
+    
     end
   end
 

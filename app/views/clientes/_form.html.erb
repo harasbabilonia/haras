@@ -1,3 +1,10 @@
+<div class="row">
+<div class="col-xs-12">
+
+<div class="form-horizontal" role="form">
+
+
+
 <%= form_for(cliente) do |f| %>
   <% if cliente.errors.any? %>
     <div id="error_explanation">
@@ -11,37 +18,53 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_field :nome %>
+  <div class="form-group">
+    <%= f.label :nome,  :class=> "col-sm-3 control-label no-padding-right" %>
+    <div class="col-sm-5"><%= f.text_field :nome %></div>
   </div>
 
-  <div class="field">
-    <%= f.label :rg %>
-    <%= f.text_field :rg %>
+  <div class="form-group">
+    <%= f.label :rg,  :class=> "col-sm-3 control-label no-padding-right" %>
+    <div class="col-sm-5"><%= f.text_field :rg %></div>
   </div>
 
-  <div class="field">
-    <%= f.label :cpf %>
-    <%= f.text_field :cpf %>
+  <div class="form-group">
+    <%= f.label :cpf,  :class=> "col-sm-3 control-label no-padding-right" %>
+    <div class="col-sm-5"><%= f.text_field :cpf %></div>
   </div>
 
-  <div class="field">
-    <%= f.label :endereco %>
-    <%= f.text_field :endereco %>
+  <div class="form-group">
+    <%= f.label :endereco,  :class=> "col-sm-3 control-label no-padding-right" %>
+    <div class="col-sm-5"><%= f.text_field :endereco %></div>
   </div>
 
-  <div class="field">
-    <%= f.label :cidade %>
-    <%= f.text_field :cidade %>
+  <div class="form-group">
+    <%= f.label :cidade, :class=> "col-sm-3 control-label no-padding-right" %>
+    <div class="col-sm-5"><%= f.text_field :cidade %></div>
   </div>
 
-  <div class="field">
-    <%= f.label :estado %>
-    <%= f.text_field :estado %>
+  <div class="form-group">
+    <%= f.label :estado, :class=> "col-sm-3 control-label no-padding-right" %>
+    <div class="col-sm-5"><%= f.text_field :estado %></div>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  
+  
+  <div class="clearfix form-actions">
+	    <div class="col-md-offset-3 col-md-9">
+		    <button type="submit" class="btn btn-info">
+			    <i class="ace-icon fa fa-check bigger-110"></i>
+			    Salvar
+		    </button>
+
+		    
+		    <%= link_to "Voltar", clientes_url, :class=> "btn" %>
+	    </div>
+    </div>
+
 <% end %>
+
+
+</div>
+</div>
+</div>
