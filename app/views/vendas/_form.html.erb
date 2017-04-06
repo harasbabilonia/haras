@@ -1,3 +1,8 @@
+<div class="row">
+<div class="col-xs-12">
+
+<div class="" role="form">
+
 <%= form_for(venda) do |f| %>
   <% if venda.errors.any? %>
     <div id="error_explanation">
@@ -11,40 +16,59 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :tipo_venda_id %>
-    <%= f.select :tipo_venda_id, @tipos.collect {|t| [t.tipo, t.id]} %>
+
+  <div class="form-group">
+    <%= f.label :tipo_venda_id, :class=> "col-sm-3 control-label no-padding-right" %>
+    <div class="col-sm-5"><%= f.select :tipo_venda_id, @tipos.collect {|t| [t.tipo, t.id]}  %></div>
   </div>
 
-  <div class="field">
-    <%= f.label :cliente_id %>
-    <%= f.select :cliente_id, @clientes.collect {|t| [t.nome, t.id]}, :include_blank => true %>
+  <div class="form-group">
+    <%= f.label :cliente_id, :class=> "col-sm-3 control-label no-padding-right" %>
+    <div class="col-sm-5"><%= f.select :cliente_id, @clientes.collect {|t| [t.nome, t.id]}, :include_blank => true %></div>
   </div>
 
-  <div class="field">
-    <%= f.label :animal_id %>
-    <%= f.select :animal_id, @animais.collect {|t| [t.nome, t.id]}, :include_blank => true %>
+  <div class="form-group">
+    <%= f.label :animal_id, :class=> "col-sm-3 control-label no-padding-right" %>
+    <div class="col-sm-5"><%= f.select :animal_id, @animais.collect {|t| [t.nome, t.id]}, :include_blank => true %></div>
   </div>
 
-  <div class="field">
-    <%= f.label :valor %>
-    <%= f.text_field :valor %>
+  <div class="form-group">
+    <%= f.label :valor, :class=> "col-sm-3 control-label no-padding-right" %>
+    <div class="col-sm-5"><%= f.text_field :valor %></div>
   </div>
 
-  <div class="field">
-    <%= f.label :n_parcelas %>
-    <%= f.number_field :n_parcelas %>
-  </div>
-
-
-  <div class="field">
-    <%= f.label :data_primeiro_vencimento %>
-    <%= f.date_select :data_primeiro_vencimento %>
+  <div class="form-group">
+    <%= f.label :n_parcelas, :class=> "col-sm-3 control-label no-padding-right" %>
+    <div class="col-sm-5"><%= f.number_field :n_parcelas %></div>
   </div>
 
 
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.label :data_primeiro_vencimento, :class=> "col-sm-3 control-label no-padding-right"%>
+    <div class="col-sm-5"><%= f.date_select :data_primeiro_vencimento %></div>
   </div>
+
+
+
+  
+  
+  
+  <div class="clearfix form-actions">
+	    <div class="col-md-offset-3 col-md-9">
+		    <button type="submit" class="btn btn-info">
+			    <i class="ace-icon fa fa-check bigger-110"></i>
+			    Salvar
+		    </button>
+
+		    
+		    <%= link_to "Voltar", vendas_url, :class=> "btn" %>
+	    </div>
+    </div>
+
 <% end %>
+</div>
+
+
+
+</div>
+</div>
