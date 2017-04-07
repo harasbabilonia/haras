@@ -5,7 +5,7 @@
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-		
+
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
 		<title>Haras Babilônia</title>
@@ -599,19 +599,19 @@
 		<script src="/assets/js/bootstrap.min.js"></script>
 
 		<!-- page specific plugin scripts -->
-        
+
         <%= yield :javascripts %>
-		
+
 		<!-- ace scripts -->
 		<script src="/assets/js/ace-elements.min.js"></script>
 		<script src="/assets/js/ace.min.js"></script>
-        
-    
+
+
 
 		<!-- inline scripts related to this page -->
-		
-		<%= yield :javascripts_inline %>
-		
-		
+
+		<%= yield :inline_javascripts %>
+
+
 	</body>
 </html>
