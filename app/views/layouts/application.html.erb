@@ -4,7 +4,7 @@
 	    <%= csrf_meta_tags %>
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
@@ -595,13 +595,13 @@
 <script src="/assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 		<script type="text/javascript">
-			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+			if('ontouchstart' in document.documentElement) document.write("<script src='/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>
 		<script src="/assets/js/bootstrap.min.js"></script>
 
 		<!-- page specific plugin scripts -->
 
-        <%= yield :javascripts %>
+    <%= yield :javascripts %>
 
 		<!-- ace scripts -->
 		<script src="/assets/js/ace-elements.min.js"></script>
