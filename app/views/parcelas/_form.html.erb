@@ -19,7 +19,7 @@
 
   <div class="form-group">
     <%= f.label :venda_id, :class=> "col-sm-3 control-label no-padding-right" %>
-    <div class="col-sm-5"><input disabled type="text" value="<%= @parcela.venda.animal.nome %>" ></div>
+    <div class="col-sm-5"><input disabled type="text" size="40" value="<%= @parcela.venda.tipo_venda.tipo %> - <%= @parcela.venda.animal.nome %>" ></div>
   </div>
 
   <div class="form-group">
