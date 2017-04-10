@@ -46,7 +46,7 @@
   </tr>
 </thead>
 <tbody>
-  <% for parcela in @venda.parcelas do %>
+  <% for parcela in @venda.parcelas.order(:numero) do %>
     <tr>
       <td><%= parcela.numero_parcela %></td>
       <td><%= parcela.data_vencimento.strftime("%d/%m/%Y") %></td>
