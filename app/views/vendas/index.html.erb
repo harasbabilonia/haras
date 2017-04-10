@@ -8,10 +8,9 @@
 <table class="table  table-bordered table-hover">
   <thead>
     <tr>
-      <th>Tipo venda</th>
+      <th>Venda</th>
       <th>Cliente</th>
-      <th>Animal</th>
-      <th>Valor</th>
+      <th>Valor (R$)</th>
       <th>N parcelas</th>
       <th> </th>
     </tr>
@@ -20,10 +19,10 @@
   <tbody>
     <% @vendas.each do |venda| %>
       <tr>
-        <td><%= venda.tipo_venda.tipo %></td>
+
+        <td><%= venda.animal.nome %> <small>( <%= venda.tipo_venda.tipo %> )</small></td>
         <td><%= venda.cliente.nome %></td>
-        <td><%= venda.animal.nome %></td>
-        <td><%= venda.valor %></td>
+        <td align="right"><%= venda.valor.to_i %></td>
         <td><%= venda.n_parcelas %></td>
         <td><%= link_to raw('<i class="ace-icon fa fa-eye"></i>'), venda %></td>
       </tr>
