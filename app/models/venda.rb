@@ -10,6 +10,15 @@ class Venda < ApplicationRecord
       valor_parcela = self.valor / self.n_parcelas
       valor_parcela = valor_parcela.round(2)
       vencimento = self.data_primeiro_vencimento
+
+      if self.valor_entrada > 0 then
+        p = Parcela.new
+        p.numero = 0
+        p.valor = self.valor_entrada
+        p.data_vencimento = self.data_entrada
+        self.parcelas << p
+      end
+
       for i in 1..self.n_parcelas do
         p = Parcela.new
         p.numero = i

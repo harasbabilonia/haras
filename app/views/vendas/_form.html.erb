@@ -33,8 +33,32 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :valor, :class=> "col-sm-3 control-label no-padding-right" %>
+    <%= f.label 'Valor Total', :class=> "col-sm-3 control-label no-padding-right" %>
     <div class="col-sm-5"><%= f.text_field :valor %></div>
+  </div>
+
+
+    <div class="form-group">
+      <%= f.label 'Valor Entrada', :class=> "col-sm-3 control-label no-padding-right" %>
+      <div class="col-sm-5"><%= f.text_field :valor_entrada, :value => 0 %></div>
+    </div>
+
+
+
+  <div class="form-group">
+    <%= f.label :data_entrada, :class=> "col-sm-3 control-label no-padding-right"%>
+    <div class="col-sm-2">
+
+      <!-- datepicker -->
+      <div class="input-group">
+      <%= f.text_field :data_entrada, :class=>"form-control date-picker", "data-date-format"=>"dd/mm/yyyy" %>
+
+        <span class="input-group-addon">
+           <i class="fa fa-calendar bigger-110"></i>
+        </span>
+      </div>
+
+    </div>
   </div>
 
   <div class="form-group">
@@ -49,12 +73,13 @@
 
       <!-- datepicker -->
       <div class="input-group">
-      <%= f.text_field :data_primeiro_vencimento, :class=>"form-control date-picker", "date-date-format"=>"dd-mm-yyyy" %>
+      <%= f.text_field :data_primeiro_vencimento, :id=> "id-date-picker-1", :class=>"form-control date-picker", "data-date-format"=>"dd/mm/yyyy" %>
+
         <span class="input-group-addon">
            <i class="fa fa-calendar bigger-110"></i>
         </span>
       </div>
-      
+
     </div>
   </div>
 

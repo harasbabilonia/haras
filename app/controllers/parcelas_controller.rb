@@ -71,6 +71,6 @@ class ParcelasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def parcela_params
-      params.require(:parcela).permit(:venda_id, :numero, :data_vencimento, :data_pagamento, :valor)
+      params.require(:parcela).permit(:venda_id, :numero, :data_vencimento, :data_pagamento, :valor, :valor_pago)
     end
 end

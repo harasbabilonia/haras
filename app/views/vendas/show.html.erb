@@ -48,10 +48,10 @@
 <tbody>
   <% for parcela in @venda.parcelas do %>
     <tr>
-      <td><%= parcela.numero %></td>
-      <td><%= parcela.data_vencimento %></td>
+      <td><%= parcela.numero_parcela %></td>
+      <td><%= parcela.data_vencimento.strftime("%d/%m/%Y") %></td>
       <td><%= parcela.valor %></td>
-      <td><%= parcela.data_pagamento ? parcela.data_pagamento : 'Em aberto' %>
+      <td><%= parcela.data_pagamento ? parcela.data_pagamento.strftime("%d/%m/%Y") : 'Em aberto' %>
       <td><%= link_to('Informar Pagamento', edit_parcela_path(parcela)) if parcela.data_pagamento.nil? %></td>
     </tr>
   <% end %>
